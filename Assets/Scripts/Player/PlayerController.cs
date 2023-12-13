@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,8 +15,11 @@ public class PlayerController : MonoBehaviour
     private bool _isFacingRight = true;
     private bool _isGrounded = true;
 
-
-    private void Awake() => _playeInputActions = new PlayerInputActions();
+    private void Awake()
+    {
+        _playeInputActions = new PlayerInputActions();
+        RotationManager.Instance.OnWorldRotated.AddListener(FreezeMovementFor);
+    }
 
     private void Update()
     {
@@ -36,13 +40,22 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move() => _rb.velocity = new Vector3(_horizontal.x * _movemenetSpeed, _rb.velocity.y, _rb.velocity.z);
-
+    
     private void Flip()
     {
         _isFacingRight = !_isFacingRight;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
+    }
+
+    private void FreezeMovementFor(float time) => StartCoroutine(FreezeMovementForProcess(time));
+
+    private IEnumerator FreezeMovementForProcess(float time)
+    {
+        _rb.isKinematic = true;
+        yield return new WaitForSeconds(time);
+        _rb.isKinematic = false;
     }
 
     private void OnEnable() => _playeInputActions.Enable();

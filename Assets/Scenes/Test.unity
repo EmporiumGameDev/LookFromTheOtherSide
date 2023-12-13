@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa0b7ef14230e440bdc068c81bafe8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnWorldRotated:
+    m_PersistentCalls:
+      m_Calls: []
   _obstacles:
   - {fileID: 509927453}
 --- !u!4 &18988781
@@ -737,8 +740,8 @@ GameObject:
   - component: {fileID: 1332500339}
   - component: {fileID: 1332500346}
   - component: {fileID: 1332500344}
-  - component: {fileID: 1332500342}
   - component: {fileID: 1332500345}
+  - component: {fileID: 1332500342}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged

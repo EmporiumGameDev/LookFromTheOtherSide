@@ -45,7 +45,5 @@ public class PlayerController : MonoBehaviour
         transform.localScale = localScale;
     }
 
-    private void OnEnable() => _playeInputActions.Enable();
 
-    private void OnDisable() => _playeInputActions.Disable();
 }

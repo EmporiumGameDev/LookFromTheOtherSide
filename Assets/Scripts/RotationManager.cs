@@ -1,16 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+enum RotationSide
+{
+    Left = 1,
+    Right = -1
+}
 
 public class RotationManager : MonoBehaviour
 {
-    enum RotationSide
-    {
-        Left = 1,
-        Right = -1
-    }
-
+    public static RotationManager Instance;
+    public UnityEvent<float> OnWorldRotated;
+    
     [SerializeField] private List<Transform> _obstacles;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Update()
     {
@@ -28,6 +40,8 @@ public class RotationManager : MonoBehaviour
 
     private IEnumerator RotationProcess(Transform obstacle, RotationSide side, int rotationAngle = 90)
     {
+        OnWorldRotated.Invoke(0.5f);
+
         for (int i = 0; i < rotationAngle; i += 1)
         {
             obstacle.RotateAround(transform.position, Vector3.up, 1 * (int)side);

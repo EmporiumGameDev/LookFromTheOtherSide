@@ -20,7 +20,7 @@ MonoBehaviour:
   forceAddRequiredComponents: 0
   optionsMenuButtonPrefab: {fileID: 3525979026492095318, guid: 768837510712cbb45b61b3e5ec8f0df5,
     type: 3}
-  internalSlotOptions: 0300000002000000
+  internalSlotOptions: 0300000001000000
   externalSlotOptions: 0300000002000000
   transferSingleItem: 324
   transferHalfStack: 304

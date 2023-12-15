@@ -181,7 +181,11 @@ namespace XEntity.InventoryItemSystem
                         Rigidbody _rb = instance.AddComponent<Rigidbody>();
                         _rb.useGravity = true;
                     }
-                    else Debug.LogError($"[{item.name}] Item prefab does not have a Rigidbody component.\nPlease set collector type to static or add the required components."); 
+                    else
+                    {
+                        Debug.LogError($"[{item.name}] Item prefab does not have a Rigidbody component.\nPlease set collector type to static or add the required components.");
+                        Debug.Log("похуй,забейте");
+                    }
                 }
             }
         }

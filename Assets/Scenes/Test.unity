@@ -1132,7 +1132,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _movemenetSpeed: 5
-  _jumpForce: 5
+  _jumpForce: 5.5
 --- !u!54 &1332500344
 Rigidbody:
   m_ObjectHideFlags: 0

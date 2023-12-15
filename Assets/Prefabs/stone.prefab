@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3731058778041989849}
   - component: {fileID: 8304805287464243917}
   - component: {fileID: 7498646669483167281}
-  - component: {fileID: 1918500724153278178}
+  - component: {fileID: 6860811074723591834}
   m_Layer: 6
   m_Name: stone
   m_TagString: Untagged
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9f9f277c34ce34d9ad5d1244944ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  harvestItem: {fileID: 11400000, guid: c4b93afce741b214ba2fb86707601bc1, type: 2}
+  harvestItem: {fileID: 11400000, guid: 525599cd198e4b642ab83f70957d9211, type: 2}
 --- !u!54 &7498646669483167281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066651644768305318}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -140,7 +140,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &1918500724153278178
+--- !u!114 &6860811074723591834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,11 +149,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2066651644768305318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5affed5bb3f6474fb35ee35a8f75d4d, type: 3}
+  m_Script: {fileID: 11500000, guid: ec3a5a38160cb08408eced12d9bbc0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1215212419432759533, guid: 677ddc48346709841902f0b0d030210e, type: 3}
   _collider: {fileID: 3981532362992765037}
+  _rb: {fileID: 7498646669483167281}
 --- !u!1001 &4950880276919770705
 PrefabInstance:
   m_ObjectHideFlags: 0

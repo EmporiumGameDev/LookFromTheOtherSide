@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bb37a5e4810a7744a6b9d1f88712c1d, type: 3}
-  m_Name: board
+  m_Name: stone
   m_EditorClassIdentifier: 
   type: 0
-  itemName: Wood
+  itemName: stone
   itemPerSlot: 100
-  icon: {fileID: 21300000, guid: 5670ececbae50904c83b3819eceaece2, type: 3}
-  prefab: {fileID: 2066651644768305318, guid: d341934a3e6c2d34db940c5be98fa961, type: 3}
+  icon: {fileID: 21300000, guid: baa105d969cf80349810a7c98998020f, type: 3}
+  prefab: {fileID: 2066651644768305318, guid: bcbb35157a99a2b4f987c8b8cb8e246d, type: 3}
   itemInformation: 

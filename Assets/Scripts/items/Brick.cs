@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Brick : Item
 {
-    public Vector3 Velocity;
-    public Rigidbody RidgedBody;
+    private Vector3 Velocity;
     public bool IsAlive = true;
-    private double _decelerationTolerance = 6.0;
+    private double _decelerationTolerance = 4.0;
 
-    void Start()
-    {
-        RidgedBody = GetComponent<Rigidbody>();
-    }
     void FixedUpdate()
     {
+        if (IsAlive)
+        {
+            IsAlive = Vector3.Distance(_rb.velocity, Velocity) < _decelerationTolerance;
+            Velocity = _rb.velocity;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
+
 }

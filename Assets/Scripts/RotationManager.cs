@@ -14,7 +14,7 @@ public class RotationManager : MonoBehaviour
     public static RotationManager Instance;
     public UnityEvent<float> OnWorldRotated;
     
-    [SerializeField] private List<Transform> _obstacles;
+    public  List<Transform> Obstacles;
 
     private void Awake()
     {
@@ -34,7 +34,7 @@ public class RotationManager : MonoBehaviour
 
     private void RotateWorld(RotationSide side)
     {
-        foreach (Transform obstacle in _obstacles)
+        foreach (Transform obstacle in Obstacles)
             StartCoroutine(RotationProcess(obstacle, side));
     }
 

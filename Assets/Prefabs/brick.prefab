@@ -237,6 +237,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 1215212419432759533, guid: 677ddc48346709841902f0b0d030210e, type: 3}
   _collider: {fileID: 412149379663586332}
-  Velocity: {x: 0, y: 0, z: 0}
-  RidgedBody: {fileID: 5217549703062056664}
+  _rb: {fileID: 5217549703062056664}
   IsAlive: 1

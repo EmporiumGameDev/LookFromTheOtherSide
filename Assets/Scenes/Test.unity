@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36775267}
   m_Layer: 0
-  m_Name: Other(not permanent)
+  m_Name: Other
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 1067066895}
   - component: {fileID: 1067066896}
   m_Layer: 0
-  m_Name: Environment(lvl)
+  m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -652,7 +652,7 @@ PrefabInstance:
     - target: {fileID: 4138367087210668457, guid: b8bacfd1967a90b468694111721432d2,
         type: 3}
       propertyPath: m_Name
-      value: permanent elements
+      value: Permanent elements
       objectReference: {fileID: 0}
     - target: {fileID: 4150333918963673662, guid: b8bacfd1967a90b468694111721432d2,
         type: 3}

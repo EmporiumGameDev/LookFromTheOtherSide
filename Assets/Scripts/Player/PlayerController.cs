@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private SoundSurce _soundSurce;
 
     [SerializeField] private float _movemenetSpeed;
     [SerializeField] private float _jumpForce;
@@ -32,16 +33,22 @@ public class PlayerController : MonoBehaviour
 
     public void GetHorizontalAxis(InputAction.CallbackContext context) => _horizontal = context.ReadValue<Vector2>();
 
-    public void Jump(InputAction.CallbackContext context)
+    public void Jump(InputAction.CallbackContext context) => StartCoroutine(JumpProcess(context));
+
+    private IEnumerator JumpProcess(InputAction.CallbackContext context)
     {
         _isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f, _layerMask);
-
+        _soundSurce.Play("StartJump");
         if (context.performed && _isGrounded)
             _rb.AddForce(0, _jumpForce, 0, ForceMode.Impulse);
+        yield return new WaitForSeconds(1f);
+        _soundSurce.Play("EndJump");
     }
 
-    private void Move() => _rb.velocity = new Vector3(_horizontal.x * _movemenetSpeed, _rb.velocity.y, _rb.velocity.z);
-
+    private void Move()
+    {
+        _rb.velocity = new Vector3(_horizontal.x * _movemenetSpeed, _rb.velocity.y, _rb.velocity.z);
+    }
     private void Flip()
     {
         _isFacingRight = !_isFacingRight;

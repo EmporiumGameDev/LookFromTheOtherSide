@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7498646669483167281}
   - component: {fileID: 1918500724153278178}
   m_Layer: 6
-  m_Name: wood
+  m_Name: stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,11 +30,11 @@ Transform:
   m_GameObject: {fileID: 2066651644768305318}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.307, y: 1.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4889254579339272676}
+  - {fileID: 6187844891616595182}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3981532362992765037
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 1215212419432759533, guid: 677ddc48346709841902f0b0d030210e, type: 3}
   _collider: {fileID: 3981532362992765037}
---- !u!1001 &5958460664786170715
+--- !u!1001 &4950880276919770705
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -222,9 +222,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e62921b043f9754c97f477a460d9b11, type: 3}
---- !u!4 &4889254579339272676 stripped
+--- !u!4 &6187844891616595182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1255003760985346751, guid: 6e62921b043f9754c97f477a460d9b11,
     type: 3}
-  m_PrefabInstance: {fileID: 5958460664786170715}
+  m_PrefabInstance: {fileID: 4950880276919770705}
   m_PrefabAsset: {fileID: 0}

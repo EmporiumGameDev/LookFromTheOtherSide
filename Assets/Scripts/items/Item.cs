@@ -1,29 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    private Vector3 offset;
-     private Camera _camera;
-    Collider _collider;
-    private void Start()
+    [SerializeField] private Camera _camera;
+    [SerializeField] private Collider _collider;
+
+    private Vector3 _offset;
+    private void OnMouseDown()
     {
-        _camera = Camera.main;
-        _collider = GetComponent<Collider>();
+        _offset = gameObject.transform.position - _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f));
     }
 
-    void OnMouseDown()
-    {
-        offset = gameObject.transform.position -_camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f));
-    }
-
-    void OnMouseDrag()
+    private void OnMouseDrag()
     {
         Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f);
-        transform.position = _camera.ScreenToWorldPoint(newPosition) + offset;
+        transform.position = _camera.ScreenToWorldPoint(newPosition) + _offset;
         _collider.enabled = false;
     }
+
     private void OnMouseUp()
     {
         _collider.enabled = true;

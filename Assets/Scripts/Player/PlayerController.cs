@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,7 +16,11 @@ public class PlayerController : MonoBehaviour
     private bool _isGrounded = true;
 
 
-    private void Awake() => _playeInputActions = new PlayerInputActions();
+    private void Awake()
+    {
+        _playeInputActions = new PlayerInputActions();
+        RotationManager.Instance.OnWorldRotated.AddListener(FreezeMovementFor);
+    }
 
     private void Update()
     {
@@ -44,6 +49,15 @@ public class PlayerController : MonoBehaviour
         localScale.x *= -1f;
         transform.localScale = localScale;
     }
+    private void FreezeMovementFor(float time) => StartCoroutine(FreezeMovementForProcess(time));
 
+    private IEnumerator FreezeMovementForProcess(float time)
+    {
+        _rb.isKinematic = true;
+        yield return new WaitForSeconds(time);
+        _rb.isKinematic = false;
+    }
 
+    private void OnEnable() => _playeInputActions.Enable();
+    private void OnDisable() => _playeInputActions.Disable();
 }

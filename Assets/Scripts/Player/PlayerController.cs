@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     {
         if ((!_isFacingRight && _horizontal.x > 0f) || (_isFacingRight && _horizontal.x < 0f))
             Flip();
+        if (transform.position.y <= 10f)
+            LevelLoader.Instance.ReloadLevel();
     }
 
     private void FixedUpdate() => Move();
@@ -36,11 +38,10 @@ public class PlayerController : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
         _isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f, _layerMask);
-        // _soundSurce.Play("StartJump");
+
         if (context.performed && _isGrounded)
             _rb.AddForce(0, _jumpForce, 0, ForceMode.Impulse);
-        // yield return new WaitForSeconds(1f);
-        //_soundSurce.Play("EndJump");
+        
     }
 
     private void Move()

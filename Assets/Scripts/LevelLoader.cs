@@ -15,4 +15,6 @@ public class LevelLoader : MonoBehaviour
     public void Home() => SceneManager.LoadScene(0);
 
     public void LoadLevel() => SceneManager.LoadScene(Progress.Instance.Level + 1);
+
+    public void ReloadLevel() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 }

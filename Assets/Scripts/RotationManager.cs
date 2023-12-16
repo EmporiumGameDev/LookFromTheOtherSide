@@ -15,8 +15,8 @@ public class RotationManager : MonoBehaviour
 
     public static RotationManager Instance;
     public UnityEvent<float> OnWorldRotated;
-    
-    public  List<Transform> Obstacles;
+
+    public List<Transform> Obstacles;
 
     private void Awake()
     {
@@ -45,13 +45,8 @@ public class RotationManager : MonoBehaviour
         OnWorldRotated.Invoke(0.5f);
 
         for (int i = 0; i < rotationAngle; i += 1)
-        {
-<<<<<<< Updated upstream
-            obstacle.RotateAround(transform.position, Vector3.up, 1 * (int)side);
-
-=======
+        { 
             obstacle.RotateAround(_player.position, Vector3.up, 1 * (int)side);
->>>>>>> Stashed changes
             yield return null;
         }
     }

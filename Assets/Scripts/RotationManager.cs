@@ -11,6 +11,8 @@ enum RotationSide
 
 public class RotationManager : MonoBehaviour
 {
+    [SerializeField] private Transform _player;
+
     public static RotationManager Instance;
     public UnityEvent<float> OnWorldRotated;
     
@@ -44,8 +46,12 @@ public class RotationManager : MonoBehaviour
 
         for (int i = 0; i < rotationAngle; i += 1)
         {
+<<<<<<< Updated upstream
             obstacle.RotateAround(transform.position, Vector3.up, 1 * (int)side);
 
+=======
+            obstacle.RotateAround(_player.position, Vector3.up, 1 * (int)side);
+>>>>>>> Stashed changes
             yield return null;
         }
     }

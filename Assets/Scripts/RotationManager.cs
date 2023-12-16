@@ -40,7 +40,7 @@ public class RotationManager : MonoBehaviour
 
     private IEnumerator RotationProcess(Transform obstacle, RotationSide side, int rotationAngle = 90)
     {
-        OnWorldRotated.Invoke(1f);
+        OnWorldRotated.Invoke(0.5f);
 
         for (int i = 0; i < rotationAngle; i += 1)
         {

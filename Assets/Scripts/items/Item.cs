@@ -8,6 +8,7 @@ public class Item : MonoBehaviour
     [SerializeField] protected Rigidbody _rb;
 
     private Vector3 _offset;
+
     private void OnMouseDown()
     {
         _offset = gameObject.transform.position - _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f));

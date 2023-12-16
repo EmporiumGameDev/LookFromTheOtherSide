@@ -16,13 +16,13 @@ public class PlayerController : MonoBehaviour
     private bool _isFacingRight = true;
     private bool _isGrounded = true;
 
-
-    private void Awake()
+    private void OnEnable()
     {
         _playeInputActions = new PlayerInputActions();
-        RotationManager.Instance.OnWorldRotated.AddListener(FreezeMovementFor);
+        _playeInputActions.Enable();
     }
 
+    private void Start() => RotationManager.Instance.OnWorldRotated.AddListener(FreezeMovementFor);
     private void Update()
     {
         if ((!_isFacingRight && _horizontal.x > 0f) || (_isFacingRight && _horizontal.x < 0f))
@@ -33,22 +33,21 @@ public class PlayerController : MonoBehaviour
 
     public void GetHorizontalAxis(InputAction.CallbackContext context) => _horizontal = context.ReadValue<Vector2>();
 
-    public void Jump(InputAction.CallbackContext context) => StartCoroutine(JumpProcess(context));
-
-    private IEnumerator JumpProcess(InputAction.CallbackContext context)
+    public void Jump(InputAction.CallbackContext context)
     {
         _isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f, _layerMask);
-        _soundSurce.Play("StartJump");
+        // _soundSurce.Play("StartJump");
         if (context.performed && _isGrounded)
             _rb.AddForce(0, _jumpForce, 0, ForceMode.Impulse);
-        yield return new WaitForSeconds(1f);
-        _soundSurce.Play("EndJump");
+        // yield return new WaitForSeconds(1f);
+        //_soundSurce.Play("EndJump");
     }
 
     private void Move()
     {
         _rb.velocity = new Vector3(_horizontal.x * _movemenetSpeed, _rb.velocity.y, _rb.velocity.z);
     }
+
     private void Flip()
     {
         _isFacingRight = !_isFacingRight;
@@ -56,6 +55,7 @@ public class PlayerController : MonoBehaviour
         localScale.x *= -1f;
         transform.localScale = localScale;
     }
+
     private void FreezeMovementFor(float time) => StartCoroutine(FreezeMovementForProcess(time));
 
     private IEnumerator FreezeMovementForProcess(float time)
@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour
         _rb.isKinematic = false;
     }
 
-    private void OnEnable() => _playeInputActions.Enable();
-    private void OnDisable() => _playeInputActions.Disable();
+    private void OnDisable()
+    {
+        _playeInputActions.Disable();
+    }
 }

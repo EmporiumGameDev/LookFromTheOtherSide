@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8304805287464243917}
   - component: {fileID: 1918500724153278178}
   m_Layer: 6
-  m_Name: wood
+  m_Name: Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,8 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5affed5bb3f6474fb35ee35a8f75d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 1215212419432759533, guid: 677ddc48346709841902f0b0d030210e, type: 3}
+  _camera: {fileID: 8728702330596010633, guid: 677ddc48346709841902f0b0d030210e, type: 3}
   _collider: {fileID: 3981532362992765037}
+  _rb: {fileID: 0}
 --- !u!1001 &5958460664786170715
 PrefabInstance:
   m_ObjectHideFlags: 0

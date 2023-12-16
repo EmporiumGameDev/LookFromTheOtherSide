@@ -1,18 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Progress : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int Level;
+
+    public static Progress Instance;
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+           // Load();
+        }
+        else
+            Destroy(gameObject);
+    }
+    public void SetLevel(int level)
+    {
+        Level = level;
+        //Save();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Save()
     {
-        
+        ProgressData progressData = new ProgressData();
+        progressData.Level = Level;
+
+        string json = JsonUtility.ToJson(progressData);
+        PlayerPrefs.SetString("Progress", json);
     }
+
+    private void Load()
+    {
+        if (PlayerPrefs.HasKey("Progress"))
+        {
+            string json = PlayerPrefs.GetString("Progress");
+            ProgressData progressData = JsonUtility.FromJson<ProgressData>(json);
+
+            Level = progressData.Level;
+        }
+    }
+}
+
+[Serializable]
+public class ProgressData
+{
+    public int Level;
 }

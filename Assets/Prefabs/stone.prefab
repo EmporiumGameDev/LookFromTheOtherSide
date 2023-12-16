@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7498646669483167281}
   - component: {fileID: 6860811074723591834}
   m_Layer: 6
-  m_Name: stone
+  m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5a38160cb08408eced12d9bbc0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 1215212419432759533, guid: 677ddc48346709841902f0b0d030210e, type: 3}
+  _camera: {fileID: 8728702330596010633, guid: 677ddc48346709841902f0b0d030210e, type: 3}
   _collider: {fileID: 3981532362992765037}
   _rb: {fileID: 7498646669483167281}
 --- !u!1001 &4950880276919770705

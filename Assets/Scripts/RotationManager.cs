@@ -45,6 +45,7 @@ public class RotationManager : MonoBehaviour
         for (int i = 0; i < rotationAngle; i += 1)
         {
             obstacle.RotateAround(transform.position, Vector3.up, 1 * (int)side);
+
             yield return null;
         }
     }

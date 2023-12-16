@@ -15,7 +15,7 @@ MonoBehaviour:
   itemCollectorMode: 1
   highlightColor: {r: 1, g: 1, b: 1, a: 0}
   itemDropHeightOffset: 1.02
-  interactionRange: 5
+  interactionRange: 100
   autoCloseExternalContainer: 0
   forceAddRequiredComponents: 0
   optionsMenuButtonPrefab: {fileID: 3525979026492095318, guid: 768837510712cbb45b61b3e5ec8f0df5,

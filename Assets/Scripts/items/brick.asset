@@ -15,6 +15,6 @@ MonoBehaviour:
   type: 0
   itemName: Brick
   itemPerSlot: 100
-  icon: {fileID: 21300000, guid: 5778bf927fff2a14986e144304d0833a, type: 3}
+  icon: {fileID: 21300000, guid: 3f1e8ca0d37925c46beeda149d0cb4ad, type: 3}
   prefab: {fileID: 7195748834898753799, guid: 24ba6b3e6360d714ea8a585c09edc476, type: 3}
   itemInformation: 

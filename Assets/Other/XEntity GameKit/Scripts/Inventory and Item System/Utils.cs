@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.IO;
 using UnityEditor;
@@ -8,6 +9,7 @@ namespace XEntity.InventoryItemSystem
     //This struct contains utility functions for the inventory system, object tweening and object highlighting.
     public readonly struct Utils
     {
+        
         /*
         * This method attempts to transfer the items from the trigger ItemSlot to the target ItemSlot.
         * If the item types are the same, they will stack until the maximum capcity is reached on the target ItemSlot.
@@ -131,6 +133,7 @@ namespace XEntity.InventoryItemSystem
             position.y += InteractionSettings.Current.itemDropHeightOffset/2;
             position.x += InteractionSettings.Current.itemDropHeightOffset;
             position.z -= 1;
+            
             if (InteractionSettings.Current.itemCollectorMode == ItemCollectorMode.Static)
             {
                 Vector3 targetSize = Vector3.one * 0.5f;
@@ -138,7 +141,7 @@ namespace XEntity.InventoryItemSystem
 
 
                 var interactable = instance.GetComponent<IInteractable>();
-                if (interactable != null) GameObject.Destroy((Object)interactable);
+                if (interactable != null) GameObject.Destroy((UnityEngine.Object)interactable);
 
                 //init collider properties
                 if (instance.TryGetComponent(out Collider col)) col.isTrigger = true;
@@ -157,7 +160,7 @@ namespace XEntity.InventoryItemSystem
             }
             else if (InteractionSettings.Current.itemCollectorMode == ItemCollectorMode.PhysicsBody) 
             {
-                GameObject instance = GameObject.Instantiate(item.prefab, position, Quaternion.identity);
+                GameObject instance = GameObject.Instantiate(item.prefab, position, Quaternion.identity, GameObject.FindGameObjectWithTag("Environment").transform);
 
                 //init collider properties
                 if (instance.TryGetComponent(out Collider col)) col.isTrigger = false;

@@ -1572,6 +1572,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment Variant 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5309984020351611385, guid: 162345bdb3b26b945b90cac0ba88203a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     - target: {fileID: 5584996602579436745, guid: 162345bdb3b26b945b90cac0ba88203a,
         type: 3}
       propertyPath: m_LocalPosition.x

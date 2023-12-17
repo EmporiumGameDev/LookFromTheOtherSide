@@ -50,23 +50,13 @@ public class PlayerController : MonoBehaviour
         if (context.performed && _isGrounded)
         {
             _rb.AddForce(0, _jumpForce, 0, ForceMode.Impulse);
-            _animator.SetTrigger("Jump_01");
         }
 
     }
 
     private void Move()
     {
-        if(_horizontal.x == 0 ) 
-        {
-            _isRun = false;
-            _animator.SetTrigger("Idle_01");
-        }
-        else if(!_isRun)
-        {
-            _isRun = true;
-            _animator.SetTrigger("Run_01");
-        }
+        
         _rb.velocity = new Vector3(_horizontal.x * _movemenetSpeed, _rb.velocity.y, _rb.velocity.z);
     }
 
